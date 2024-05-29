@@ -1,0 +1,16 @@
+GET http://localhost:3001/api/persons/
+
+###
+GET http://localhost:3001/api/persons/3
+
+###
+DELETE http://localhost:3001/api/persons/3
+
+###
+POST http://localhost:3001/api/persons/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Carles Vargas",
+    "number": "+34 687367114"
+}
