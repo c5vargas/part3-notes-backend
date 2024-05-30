@@ -16,10 +16,26 @@ mongoose.connect(url)
 const personSchema = new mongoose.Schema({
 	name: {
 		type: String,
+		minLength: 3,
 		required: true
 	},
 	number: {
 		type: String,
+		minLength: 8,
+		validate: {
+      validator: function(v) {
+				const num = v.split('-')
+				
+				if(num[0].length <= 1 || num[0].length > 3)
+					return false
+
+				if(num.length > 2)
+					return false
+
+        return true;
+      },
+      message: props => `${props.value} is not a valid phone number!`
+    },
 		required: true
 	},
 })
