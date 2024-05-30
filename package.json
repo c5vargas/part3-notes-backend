@@ -10,7 +10,8 @@
     "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd ../phonebook && npm run build && @powershell Copy-Item dist -Recurse ../part3-notes-backend",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "lint": "eslint ."
   },
   "author": "c5vargas",
   "license": "MIT",
@@ -22,7 +23,10 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.3.0",
     "@flydotio/dockerfile": "^0.5.7",
+    "eslint": "^9.3.0",
+    "globals": "^15.3.0",
     "nodemon": "^3.1.2"
   }
 }
